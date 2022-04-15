@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test case 1</title>
+  </head>
+  <body>
+    <script src="https://webgl2fundamentals.org/webgl/resources/webgl-utils.js"></script>
+    <script type="module">
+      import case1 from './case1.mjs';
+      import case2 from './case2.mjs';
+      import case3 from './case3.mjs';
+      import case4 from './case4.mjs';
+      import case5 from './case5.mjs';
+      import case6 from './case6.mjs';
+
+      async function average100(f) {
+        const n = 100;
+        return (
+          (await Promise.all(
+            Array.from({length: n}, async () => await f())))
+          .reduce((p, c) => p + c, 0) / n
+        );
+      }
+
+      async function run() {
+        console.log('case1 オリジナル Rust', await average100(case1));
+        console.log('case2 オリジナル JS', await average100(case2));
+        console.log('case3 get_unchecked バージョン', await average100(case3));
+        console.log('case4 chunks バージョン', await average100(case4));
+        console.log('case5 Rgba 型定義バージョン', await average100(case5));
+        console.log('おまけ: case6 WebGL', await average100(case6));
+      }
+
+      run();
+    </script>
+  </body>
+</html>
