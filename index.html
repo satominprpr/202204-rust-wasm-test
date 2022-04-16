@@ -13,6 +13,7 @@
       import case4 from './case4.mjs';
       import case5 from './case5.mjs';
       import case6 from './case6.mjs';
+      import case7 from './case7.mjs';
 
       async function average100(f) {
         const n = 100;
@@ -30,6 +31,7 @@
         console.log('case4 chunks バージョン', await average100(case4));
         console.log('case5 Rgba 型定義バージョン', await average100(case5));
         console.log('おまけ: case6 WebGL', await average100(case6));
+        console.log('おまけ: case7 get_index', await average100(case7));
       }
 
       run();

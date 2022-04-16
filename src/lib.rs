@@ -8,3 +8,5 @@ pub mod case1;
 pub mod case3;
 pub mod case4;
 pub mod case5;
+pub mod case7;
+mod imbuf;
